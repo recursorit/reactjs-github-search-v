@@ -10,10 +10,9 @@ function App() {
   const [rows, setRows] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [totalCount, setTotalCount] = useState(0);
 
   const generateURL = (searchQuery) => {
-    return `?q=${encodeURIComponent(searchQuery + 'in:login')}&per_page=9`
+    return `?q=${encodeURIComponent(searchQuery + 'in:login')}&per_page=100`
   }
 
   const onSearch = async (searchTerm) => {
@@ -21,7 +20,6 @@ function App() {
     const response = await axios.get(`${BASE_URL}/search/users${generateURL(searchTerm)}`);
     if (response.data.items.length > 1) {
       setRows(response.data.items);
-      setTotalCount(response.data.total_count);
     } else {
       setError('The search returned 0 results. Please try another name.');
     }
@@ -43,7 +41,7 @@ function App() {
       { error && <Alerts className="alert-box" severity="error" errorMessage={error} onClose={closeAlert} /> }
       { rows.length < 1
         ? <Search onSearch={onSearch} loading={loading} error={error}/>
-        : <Results rows={rows} resetRows={onResetRows} totalCount={totalCount} />
+        : <Results rows={rows} resetRows={onResetRows} />
       }
     </div>
   );

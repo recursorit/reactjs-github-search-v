@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Results = ({rows, resetRows, totalCount}) => {
+const Results = ({rows, resetRows}) => {
   const classes = useStyles();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(9);
@@ -106,7 +106,7 @@ const Results = ({rows, resetRows, totalCount}) => {
       <TablePagination
         rowsPerPageOptions={[9, 25, 100]}
         component="div"
-        count={totalCount}
+        count={rows.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onChangePage={handleChangePage}
