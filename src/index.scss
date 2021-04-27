@@ -12,58 +12,37 @@ code {
     monospace;
 }
 
-.container {
+.table-container {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  box-shadow: none;
+  width: 600px;
+  border: 1px solid #80808033;
 
-  .search-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  @media (max-width: 599px) {
+    width: 100%;
   }
+}
 
-  .results-container {
-    display: flex;
-    flex-direction: column;
+.MuiButton-containedPrimary {
+  margin-bottom: 1em;
+}
+
+.btn-wrapper {
+  position: relative;
+  .btn-progress {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -12px;
+    margin-left: -12px;
   }
+}
 
-  .table-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: none;
-    width: 600px;
-    border: 1px solid #80808033;
-
-    @media (max-width: 599px) {
-      width: 100%;
-    }
-  }
-
-  .go-back-btn {
-    margin-bottom: 1em;
-    float: left;
-    width: 100px;
-  }
-
-  .btn-wrapper {
-    position: relative;
-    .btn-progress {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-top: -12px;
-      margin-left: -12px;
-    }
-  }
-
-  .alert-box {
-    width: 200px;
-    margin-bottom: 10px;
-  }
-
+.alert-box {
+  width: 200px;
+  margin-bottom: 10px;
 }
 

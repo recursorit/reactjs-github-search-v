@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -15,16 +15,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Search = ({onSearch, loading, error}) => {
+const Search = ({onSearch, loading, error, search, setSearch}) => {
   const classes = useStyles();
-
-  const [search, setSearch] = useState('');
-
-  useEffect(() => {
-    if (error) {
-      setSearch('');
-    }
-  }, [error])
 
   return (
     <Fade in={true} timeout={1000}>
@@ -43,7 +35,7 @@ const Search = ({onSearch, loading, error}) => {
             variant="contained"
             color="primary"
             disabled={search.length === 0 || loading}
-            onClick={() => onSearch(search)}>
+            onClick={() => onSearch()}>
             Submit
           </Button>
           { loading && <CircularProgress size={24} className="btn-progress" /> }
