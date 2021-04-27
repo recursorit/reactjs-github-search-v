@@ -28,7 +28,9 @@ To build the application files, please run
 
 ## Staticly hosted
 
-The application is also hosted statically on URL
+The application is also hosted statically on
+- [main](https://scalio-github-search-main.netlify.app/)
+- [server-side](https://scalio-github-search-server.netlify.app/)
 
 ## Libraries
 
