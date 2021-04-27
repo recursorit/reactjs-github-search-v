@@ -35,6 +35,7 @@ function App() {
     const response = await axios.get(`${BASE_URL}/search/users${generateURL(searchTerm, currentPage, sort, order)}`).catch((err) => {
       errTmp = err.response.data.message;
       setError(err.response.data.message);
+      onResetRows();
     });
     if (!errTmp) {
       if (response.data.items.length > 1) {
@@ -48,6 +49,10 @@ function App() {
 
   const onResetRows = () => {
     setRows([]);
+    setPage(1);
+    setSearch('');
+    setOrder('login');
+    setOrderBy('asc');
   }
 
   const closeAlert = () => {
