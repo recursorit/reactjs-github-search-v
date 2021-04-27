@@ -13,19 +13,26 @@ As per the initial project description, I have created two versions of the appli
 ## Installation
 
 To run the application first clone the repo using
-`git clone git@github.com:recursorit/reactjs-github-search-v.git`
+- `git clone git@github.com:recursorit/reactjs-github-search-v.git`
 
 then to install dependencies
-`npm install`
+- `npm install`
 
 and to run the application
-`npm start`
+- `npm start`
 
 ## Build
 
 To build the application files, please run
-`npm run build`
+- `npm run build`
 
 ## Staticly hosted
 
 The application is also hosted statically on URL
+
+## Libraries
+
+The project was only made possible because of following libraries.
+- Material UI
+- Axios
+- Node Sass

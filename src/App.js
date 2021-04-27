@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useState } from "react";
 import Results from "./components/Results";
 import Alerts from './components/Alerts';
+import Typography from '@material-ui/core/Typography';
 
 const BASE_URL = 'https://api.github.com';
 
@@ -37,7 +38,10 @@ function App() {
 
   return (
     <div className="container">
-      <h2>ReactJS Test Assignment - Scalio</h2>
+      <Typography variant="h2" gutterBottom>
+      ReactJS Test Assignment - Scalio
+      </Typography>
+
       { error && <Alerts className="alert-box" severity="error" errorMessage={error} onClose={closeAlert} /> }
       { rows.length < 1
         ? <Search onSearch={onSearch} loading={loading} error={error}/>
