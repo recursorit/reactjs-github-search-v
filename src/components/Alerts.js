@@ -28,7 +28,7 @@ const Alerts = ({errorMessage, timeout, severity, onClose}) => {
     return () => {
       clearTimeout(timer);
     }
-  }, []);
+  }, [setOpen, onClose, timeout]);
 
   return (
     <div className={classes.root}>
