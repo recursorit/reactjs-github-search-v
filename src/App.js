@@ -12,7 +12,7 @@ function App() {
   const [error, setError] = useState('');
 
   const generateURL = (searchQuery) => {
-    return `?q=${encodeURIComponent(searchQuery + 'in:login')}&per_page=100`
+    return `?q=${encodeURIComponent(`${searchQuery} in:login`)}&per_page=100`
   }
 
   const onSearch = async (searchTerm) => {
